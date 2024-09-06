@@ -1,0 +1,20 @@
+{
+    "name": "@imperia/utils",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "test": "bun test"
+    },
+    "dependencies": {
+        "type-fest": "^4.26.0"
+    },
+    "devDependencies": {
+        "@imperia/typescript": "workspace:*",
+        "@types/bun": "latest",
+        "typescript": "^5"
+    },
+    "exports": {
+        "./package": "./src/package.ts"
+    }
+}

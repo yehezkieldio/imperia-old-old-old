@@ -22,5 +22,9 @@
         "@types/bun": "latest",
         "tsup": "^8.2.4",
         "typescript": "^5"
+    },
+    "exports": {
+        "./rpc/client": "./src/rpc/client.ts",
+        "./rpc/health": "./src/rpc/healthcheck.ts"
     }
 }

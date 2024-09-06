@@ -1,8 +1,8 @@
-import { client } from "./client";
+import { aggregatorClient } from "./client";
 
 export async function getHealthcheck(): Promise<boolean> {
     try {
-        await client.healthcheck.$get();
+        await aggregatorClient.healthcheck.$get();
 
         return true;
     } catch (error) {

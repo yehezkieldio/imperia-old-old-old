@@ -1,0 +1,22 @@
+{
+    "name": "@imperia/discord-bot",
+    "version": "0.0.0",
+    "private": true,
+    "main": "dist/main.js",
+    "type": "module",
+    "scripts": {
+        "build": "bun --env-file ../../.env tsup --format esm",
+        "start": "bun --env-file ../../.env .",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@imperia/logger": "workspace:*",
+        "@imperia/aggregator": "workspace:*"
+    },
+    "devDependencies": {
+        "@imperia/typescript": "workspace:*",
+        "@types/bun": "latest",
+        "tsup": "^8.2.4",
+        "typescript": "^5"
+    }
+}

@@ -11,7 +11,8 @@
     },
     "dependencies": {
         "@imperia/logger": "workspace:*",
-        "@imperia/aggregator": "workspace:*"
+        "@imperia/aggregator": "workspace:*",
+        "@imperia/environment": "workspace:*"
     },
     "devDependencies": {
         "@imperia/typescript": "workspace:*",

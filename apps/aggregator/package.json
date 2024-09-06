@@ -1,5 +1,6 @@
 {
     "name": "@imperia/aggregator",
+    "description": "An aggregator service that consolidates multiple APIs into a unified endpoint.",
     "version": "0.0.0",
     "private": true,
     "main": "dist/main.js",
@@ -11,6 +12,8 @@
     },
     "dependencies": {
         "@imperia/logger": "workspace:*",
+        "@imperia/environment": "workspace:*",
+        "@imperia/utils": "workspace:*",
         "@hono/zod-openapi": "^0.16.0",
         "@sapphire/fetch": "^3.0.2",
         "@scalar/hono-api-reference": "^0.5.143",

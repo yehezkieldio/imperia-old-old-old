@@ -7,5 +7,5 @@ export default defineConfig({
     skipNodeModulesBundle: true,
     keepNames: true,
     tsconfig: "tsconfig.json",
-    noExternal: ["@imperia/logger"],
+    noExternal: ["@imperia/logger", "@imperia/environment", "@imperia/utils"],
 });

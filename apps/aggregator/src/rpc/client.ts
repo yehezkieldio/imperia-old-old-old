@@ -1,7 +1,9 @@
 import { hc } from "hono/client";
 
+import { aggregatorEnv } from "@imperia/environment/aggregator";
+
 import type { AppType } from "../main";
 
-const url = "http://localhost:3000";
+const url = `http://${aggregatorEnv.AGGREGATOR_HOST}:${aggregatorEnv.AGGREGATOR_PORT}`;
 
 export const aggregatorClient = hc<AppType>(url);

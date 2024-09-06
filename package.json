@@ -7,6 +7,7 @@
         "start:bot": "turbo start --filter @imperia/discord-bot",
         "start:web": "turbo start --filter @imperia/web",
         "start:aggregator": "turbo start --filter @imperia/aggregator",
+        "dev:web": "turbo dev --filter @imperia/web",
         "db:push": "turbo db:push",
         "db:studio": "turbo db:studio",
         "db:generate": "turbo db:generate",

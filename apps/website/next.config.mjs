@@ -2,7 +2,7 @@ const isDockerBuild = process.env.IS_DOCKER_BUILD === "true";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: isDockerBuild ? { standalone: true } : {},
+    ...(isDockerBuild && { output: "standalone" }),
     typescript: {
         ignoreBuildErrors: true,
     },

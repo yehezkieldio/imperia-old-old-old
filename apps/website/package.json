@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "build:docker": "IS_DOCKER_BUILD=true next build",
         "start": "next start",
         "lint": "next lint",
         "typecheck": "tsc --noEmit"

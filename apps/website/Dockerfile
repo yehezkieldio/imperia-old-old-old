@@ -54,7 +54,7 @@ COPY --from=builder /tmp/node_modules ./node_modules
 COPY --from=builder /app/out/full/ .
 
 # Run the build using Turbo
-RUN yarn turbo run build --filter @imperia/website
+RUN yarn turbo run build:docker --filter @imperia/website
 
 # ---------------------------------------------------------------------------- #
 
@@ -64,7 +64,7 @@ WORKDIR /app
 USER bun
 
 COPY --from=installer --chown=bun:bun /app/apps/website/.next/standalone ./
-COPY --from=installer --chown=bun:bun /app/apps/website/.next/static ./.next/static
-COPY --from=installer --chown=bun:bun /app/apps/website/public ./public
+COPY --from=installer --chown=bun:bun /app/apps/website/.next/static ./apps/website/.next/static
+# COPY --from=installer --chown=bun:bun /app/apps/website/public ./public
 
-CMD ["bun", "server.js"]
+CMD ["bun", "apps/website/server.js"]

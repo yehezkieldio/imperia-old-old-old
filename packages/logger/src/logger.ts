@@ -42,6 +42,7 @@ export class ImperiaLogger implements ILogger {
             level: "trace",
             ...options,
         });
+
         this.stream = process.stdout;
     }
 

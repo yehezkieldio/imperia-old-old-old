@@ -13,7 +13,7 @@ DEVELOPMENT_COMPOSE_PATH = docker/development/compose.yml
 
 DISCORD_BOT_PATH = apps/discord-bot/Dockerfile
 AGGREGATOR_PATH = apps/aggregator/Dockerfile
-WEB_PATH = apps/web/Dockerfile
+WEBSITE_PATH = apps/website/Dockerfile
 
 # ---------------------------------------------------------------------------- #
 
@@ -27,11 +27,11 @@ help:
 	@echo "  dev-prune: Stop development environment and remove volumes"
 	@echo "  build-discord-bot: Build discord bot image"
 	@echo "  build-aggregator: Build aggregator image"
-	@echo "  build-web: Build web image"
+	@echo "  build-website: Build website image"
 
 # ---------------------------------------------------------------------------- #
 
-.PHONY: dev-
+.PHONY: dev-up
 dev-up:
 	docker compose --file $(DEVELOPMENT_COMPOSE_PATH) --env-file .env up -d
 
@@ -51,12 +51,12 @@ dev-prune:
 
 .PHONY: build-discord-bot
 build-discord-bot:
-	docker build -f $(DISCORD_BOT_PATH) -t ixveria-discord-bot .
+	docker build -f $(DISCORD_BOT_PATH) -t imperia-discord-bot .
 
 .PHONY: build-aggregator
 build-aggregator:
-	docker build -f $(AGGREGATOR_PATH) -t ixveria-aggregator .
+	docker build -f $(AGGREGATOR_PATH) -t imperia-aggregator .
 
-.PHONY: build-web
-build-web:
-	docker build -f $(WEB_PATH) -t ixveria-web .
+.PHONY: build-website
+build-website:
+	docker build -f $(WEBSITE_PATH) -t imperia-website .

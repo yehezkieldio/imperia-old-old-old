@@ -4,10 +4,10 @@
     "scripts": {
         "build": "turbo build",
         "typecheck": "turbo typecheck",
-        "start:bot": "turbo start --filter @imperia/discord-bot",
-        "start:web": "turbo start --filter @imperia/web",
+        "start:discord-bot": "turbo start --filter @imperia/discord-bot",
+        "start:website": "turbo start --filter @imperia/website",
         "start:aggregator": "turbo start --filter @imperia/aggregator",
-        "dev:web": "turbo dev --filter @imperia/web",
+        "dev:website": "turbo dev --filter @imperia/website",
         "db:push": "turbo db:push",
         "db:studio": "turbo db:studio",
         "db:generate": "turbo db:generate",

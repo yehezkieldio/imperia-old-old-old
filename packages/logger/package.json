@@ -1,0 +1,19 @@
+{
+    "name": "@imperia/logger",
+    "version": "0.0.0",
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "test": "bun test"
+    },
+    "dependencies": {
+        "picocolors": "^1.1.0",
+        "pino": "^9.4.0"
+    },
+    "devDependencies": {
+        "@imperia/typescript": "workspace:*",
+        "@types/bun": "latest",
+        "@types/node": "latest",
+        "tsup": "^8.2.4",
+        "typescript": "^5.5.4"
+    }
+}

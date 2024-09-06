@@ -1,0 +1,30 @@
+{
+    "name": "@imperia/source",
+    "private": true,
+    "scripts": {
+        "build": "turbo build",
+        "typecheck": "turbo typecheck",
+        "start:bot": "turbo start --filter @imperia/discord-bot",
+        "start:web": "turbo start --filter @imperia/web",
+        "start:aggregator": "turbo start --filter @imperia/aggregator",
+        "db:push": "turbo db:push",
+        "db:studio": "turbo db:studio",
+        "db:generate": "turbo db:generate",
+        "db:drop": "turbo db:drop",
+        "db:migrate": "turbo db:migrate",
+        "biome": "biome check .",
+        "biome:fix": "biome check . --write"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.8.3",
+        "@types/bun": "^1.1.8",
+        "lefthook": "^1.7.15",
+        "turbo": "^2.1.1",
+        "typescript": "^5.5.4"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "bun@1.1.26",
+    "workspaces": ["apps/*", "packages/*", "tooling/*"]
+}

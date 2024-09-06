@@ -1,0 +1,26 @@
+{
+    "name": "@imperia/aggregator",
+    "version": "0.0.0",
+    "private": true,
+    "main": "dist/main.js",
+    "type": "module",
+    "scripts": {
+        "build": "bun --env-file ../../.env tsup --format esm",
+        "start": "bun --env-file ../../.env .",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@imperia/logger": "workspace:*",
+        "@hono/zod-openapi": "^0.16.0",
+        "@sapphire/fetch": "^3.0.2",
+        "@scalar/hono-api-reference": "^0.5.143",
+        "hono": "^4.5.10",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@imperia/typescript": "workspace:*",
+        "@types/bun": "latest",
+        "tsup": "^8.2.4",
+        "typescript": "^5"
+    }
+}

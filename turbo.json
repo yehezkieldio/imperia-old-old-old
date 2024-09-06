@@ -41,6 +41,9 @@
             "dependsOn": ["^test"],
             "inputs": ["$TURBO_DEFAULT$", ".env*"]
         },
+        "ui": {
+            "cache": false
+        },
         "//#biome": {},
         "//#biome:fix": {
             "cache": false

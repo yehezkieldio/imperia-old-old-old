@@ -14,7 +14,8 @@
         "db:drop": "turbo db:drop",
         "db:migrate": "turbo db:migrate",
         "biome": "biome check .",
-        "biome:fix": "biome check . --write"
+        "biome:fix": "biome check . --write",
+        "ui:add": "bun --filter '@imperia/ui' ui add"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.8.3",

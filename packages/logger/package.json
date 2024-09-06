@@ -13,7 +13,6 @@
         "@imperia/typescript": "workspace:*",
         "@types/bun": "latest",
         "@types/node": "latest",
-        "tsup": "^8.2.4",
         "typescript": "^5.5.4"
     },
     "exports": {

@@ -1,0 +1,11 @@
+{
+    "extends": "@imperia/typescript/react.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@imperia/ui/*": ["./src/*"]
+        }
+    },
+    "include": ["src", "../../tooling/typescript/reset.d.ts"],
+    "exclude": ["node_modules", "dist"]
+}

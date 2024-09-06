@@ -34,7 +34,9 @@ export const getName = async (): Promise<string> => {
     const name = contents.name as string;
 
     return name
-        .split("/")
+        .replace("@", "")
+        .replace("-", " ")
+        .split(/[\s/]+/)
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
 };

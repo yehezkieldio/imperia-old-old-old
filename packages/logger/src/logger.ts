@@ -27,8 +27,9 @@ type PinoLogLevel = "trace" | "debug" | "info" | "warn" | "error" | "fatal";
 export class ImperiaLogger implements ILogger {
     private logger: pino.Logger;
     private stream: NodeJS.WritableStream;
+    private minLevel: LogLevel;
 
-    constructor(options?: pino.LoggerOptions) {
+    constructor(minLevel: LogLevel = LogLevel.Trace, options?: pino.LoggerOptions) {
         this.logger = pino({
             customLevels: {
                 trace: 10,
@@ -44,10 +45,11 @@ export class ImperiaLogger implements ILogger {
         });
 
         this.stream = process.stdout;
+        this.minLevel = minLevel;
     }
 
     has(level: LogLevel): boolean {
-        return this.logger.isLevelEnabled(LogLevel[level].toLowerCase() as PinoLogLevel);
+        return level >= this.minLevel;
     }
 
     trace(...values: readonly unknown[]): void {
@@ -78,12 +80,14 @@ export class ImperiaLogger implements ILogger {
         const pinoLevel = LogLevel[level].toLowerCase() as PinoLogLevel;
 
         if (this.isValidLogLevel(pinoLevel)) {
-            const logMessage = {
-                time: new Date().toISOString(),
-                message: values.length === 1 ? values[0] : values,
-            };
+            if (this.has(level)) {
+                const logMessage = {
+                    time: new Date().toISOString(),
+                    message: values.length === 1 ? values[0] : values,
+                };
 
-            this.stream.write(`${this.colorizeLevel(pinoLevel).padEnd(18)} ${logMessage.message}\n`);
+                this.stream.write(`${this.colorizeLevel(pinoLevel).padEnd(18)} ${logMessage.message}\n`);
+            }
         } else {
             console.error(`Invalid log level: ${pinoLevel}`);
         }
@@ -96,7 +100,7 @@ export class ImperiaLogger implements ILogger {
     private colorizeLevel(level: PinoLogLevel): string {
         switch (level) {
             case "trace":
-                return pc.gray(level.toUpperCase());
+                return pc.cyan(level.toUpperCase());
             case "debug":
                 return pc.blue(level.toUpperCase());
             case "info":

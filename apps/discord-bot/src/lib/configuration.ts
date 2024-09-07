@@ -31,7 +31,7 @@ export const configuration: ImperiaClientOptions = {
     loadDefaultErrorListeners: discordBotEnv.NODE_ENV === "development",
     loadMessageCommandListeners: true,
     logger: {
-        instance: new ImperiaLogger(),
+        instance: new ImperiaLogger(discordBotEnv.NODE_ENV === "development" ? LogLevel.Debug : LogLevel.Info),
         level: discordBotEnv.NODE_ENV === "development" ? LogLevel.Debug : LogLevel.Info,
     },
     overrideApplicationCommandsRegistries: discordBotEnv.NODE_ENV === "development",

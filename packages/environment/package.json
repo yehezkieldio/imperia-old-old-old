@@ -15,9 +15,6 @@
         "typescript": "^5"
     },
     "exports": {
-        "./discord-bot": "./src/discord-bot.ts",
-        "./website": "./src/website.ts",
-        "./aggregator": "./src/aggregator.ts",
-        "./shared": "./src/shared.ts"
+        "./*": "./src/*.ts"
     }
 }

@@ -1,12 +1,20 @@
-import { getHealthcheck } from "@imperia/aggregator/rpc/health";
-import { ImperiaLogger } from "@imperia/logger";
+import { discordBotEnv } from "@imperia/environment/bot";
 
-const logger = new ImperiaLogger();
-const isHealthy = await getHealthcheck();
+import { configuration } from "#lib/configuration";
+import { ImperiaClient } from "#lib/extensions/client";
 
-if (!isHealthy) {
-    logger.error("Aggregator is not healthy.");
-    process.exit(1);
-} else {
-    logger.info("Aggregator is healthy.");
+export async function main(): Promise<void> {
+    const client = new ImperiaClient(configuration);
+    await client.login(discordBotEnv.DISCORD_TOKEN);
+
+    process.on("SIGINT", async (): Promise<void> => {
+        await client.destroy().then((): never => {
+            process.exit();
+        });
+    });
 }
+
+main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+});

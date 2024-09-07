@@ -9,7 +9,7 @@ import { z } from "zod";
 export const sharedEnv = createEnv({
     server: {
         NODE_ENV: z.enum(["development", "production"]).default("development"),
-        WORKING_ENV: z.enum(["discord-bot", "aggregator", "website"]).default("discord-bot"),
+        WORKING_ENV: z.enum(["discord-bot", "aggregator", "website", "docker"]).default("discord-bot"),
         DATABASE_URL: z.string().url(),
     },
     clientPrefix: "PUBLIC_",

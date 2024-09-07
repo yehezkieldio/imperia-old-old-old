@@ -30,5 +30,10 @@
         "@types/bun": "latest",
         "tsup": "^8.2.4",
         "typescript": "^5"
+    },
+    "imports": {
+        "#lib/*": "./src/lib/*.ts",
+        "#services/*": "./src/services/*.ts",
+        "#utilities/*": "./src/utilities/*.ts"
     }
 }

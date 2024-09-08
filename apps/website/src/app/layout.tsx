@@ -1,9 +1,9 @@
 import "@imperia/ui/globals.css";
 
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 
-const font = Plus_Jakarta_Sans({
+const font = DM_Sans({
     subsets: ["latin"],
     variable: "--font-sans",
 });
